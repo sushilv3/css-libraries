@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>top navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        header {
+            background-color: seagreen;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        header>ul {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        header>ul>li {
+            list-style: none;
+        }
+        
+        .content>ul>li {
+            list-style: none;
+        }
+        
+        header>ul>li>a {
+            text-decoration: none;
+            color: #f1f1ff;
+            line-height: 60px;
+            display: block;
+            padding: 0 8px;
+        }
+        
+        .content>ul>li>a {
+            text-decoration: none;
+            color: #f1f1ff;
+            line-height: 60px;
+            display: block;
+            padding: 0 8px;
+        }
+        
+        header>ul>li>a:hover {
+            background-color: #f1f1ff;
+            color: seagreen;
+        }
+        
+        .content>ul>li>a:hover {
+            background-color: #f1f1ff;
+            color: seagreen;
+        }
+        
+        .nav-icn {
+            height: 60px;
+            width: 60px;
+            /* border: 1px solid red; */
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: all 0.9s ease-out;
+            /* overflow: hidden; */
+        }
+        
+        .stick {
+            position: absolute;
+            height: 10px;
+            width: 100%;
+            background-color: tomato;
+        }
+        
+        .nav-icn:hover .s1 {
+            transform: rotate(45deg);
+            top: 50%;
+            transition: all 0.9s ease-out;
+        }
+        
+        .nav-icn:hover .s3 {
+            transform: rotate(-45deg);
+            top: 50%;
+            transition: all 0.9s ease-out;
+        }
+        
+        .nav-icn:hover .s2 {
+            /* transform: rotate(45deg); */
+            /* display: none; */
+            opacity: 0;
+            transform: rotateZ(45deg);
+            transform: scaleX(3);
+            transition: all 0.9s ease-out;
+            /* width: 50px; */
+        }
+        
+        .s1 {
+            top: 0;
+            left: 0;
+        }
+        
+        .s2 {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+        }
+        
+        .s3 {
+            bottom: 0;
+            left: 0;
+        }
+        
+        .content {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            height: auto;
+            /* height: 400px; */
+            width: 100px;
+            background-color: teal;
+        }
+        
+        .tab div {
+            display: none;
+        }
+        
+        .tab div:target {
+            display: block;
+        }
+        
+        @media only screen and (min-width: 360px) {
+            header,
+            .content {
+                display: none;
+            }
+            .nav-icn:hover .content {
+                display: block;
+            }
+        }
+        
+        @media only screen and (min-width:540px) {
+            header {
+                display: none
+            }
+        }
+        
+        @media only screen and (min-width:720px) {
+            header {
+                display: flex;
+            }
+            .nav-icn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="http://via.placeholder.com/60x60" alt="">
+        <ul>
+            <li>
+                <a href="#link1">menu1</a>
+            </li>
+            <li>
+                <a href="#link2">menu2</a>
+            </li>
+            <li>
+                <a href="#link3">menu3</a>
+            </li>
+            <li>
+                <a href="#link4">menu4</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="nav-icn">
+        <div class="stick s1"></div>
+        <div class="stick s2"></div>
+        <div class="stick s3"></div>
+        <div class="content">
+            <ul>
+                <li>
+                    <a href="#link1">menu1</a>
+                </li>
+                <li>
+                    <a href="#link2">menu2</a>
+                </li>
+                <li>
+                    <a href="#link3">menu3</a>
+                </li>
+                <li>
+                    <a href="#link4">menu4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab">
+        <div id="link1">
+            <h3>Content to Link 1</h3>
+            <p>Hello World!</p>
+        </div>
+
+        <div id="link2">
+            <h3>Content to Link 2</h3>
+            <h4>Great success!</h4>
+        </div>
+
+        <div id="link3">
+            <h3>Content to Link 3</h3>
+            <p>Yeah!</p>
+        </div>
+        <div id="link4">
+            <h3>Content to Link 4</h3>
+            <p>congratulation!</p>
+        </div>
+    </div>
+</body>
+
+</html>
